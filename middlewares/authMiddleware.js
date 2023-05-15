@@ -15,7 +15,7 @@ export const requireSignIn = async (req, res, next) => {
   }
 };
 
-//admin access
+//admin access middleware
 
 export const isAdmin = async (req, res, next) => {
   try {
