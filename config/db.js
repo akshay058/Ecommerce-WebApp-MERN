@@ -1,6 +1,7 @@
-//mongoose connection....
+//mongoose connection.
 import mongoose from "mongoose";
 import colors from "colors"; // for colors
+//connection for db
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URL);
