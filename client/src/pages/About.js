@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 
 export default function About() {
   return (
-    <Layout>
+    <Layout title={"About us - Ecommerce App"}>
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img
