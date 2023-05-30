@@ -13,16 +13,20 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    debugger;
+    // debugger;
     e.preventDefault();
+    console.log("hello");
     try {
-      const res = await axios.post("/api/v1/auth/register", {
-        name,
-        email,
-        password,
-        address,
-        phone,
-      });
+      const res = await axios.post(
+        `${process.env.REACT_APP_API}/api/v1/auth/register`,
+        {
+          name,
+          email,
+          password,
+          phone,
+          address,
+        }
+      );
       console.log(res.data);
       debugger;
       if (res.data.success) {
@@ -31,6 +35,7 @@ export default function Register() {
       } else {
         toast.error(res.data.message);
       }
+      toast.success("hello");
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong");
