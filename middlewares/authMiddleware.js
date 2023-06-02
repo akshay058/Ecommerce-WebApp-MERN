@@ -1,7 +1,7 @@
 import JWT from "jsonwebtoken";
 import userModel from "../models/userModel.js";
 
-// protect routes from base...jwt token
+// protect routes from base...jwt token..
 export const requireSignIn = async (req, res, next) => {
   try {
     const decode = JWT.verify(
