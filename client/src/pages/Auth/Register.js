@@ -13,7 +13,6 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    // debugger;
     e.preventDefault();
     console.log("hello");
     try {
@@ -21,14 +20,13 @@ export default function Register() {
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
         {
           name,
-          email,
+          email, 
           password,
           phone,
           address,
         }
       );
       console.log(res.data);
-      debugger;
       if (res.data.success) {
         toast.success(res.data.message);
         navigate("/login");

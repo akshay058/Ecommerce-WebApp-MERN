@@ -17,7 +17,7 @@ const app = express();
 connectDB();
 
 //middlewares
-app.use(cors);
+app.use(cors());
 app.use(express.json()); // instead of url.bodyparser this used in express
 app.use(morgan("dev")); // use see api data on console use morgan package
 
