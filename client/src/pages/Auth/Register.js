@@ -16,6 +16,7 @@ export default function Register() {
     e.preventDefault();
     console.log("hello");
     try {
+      // using axios for api fetching
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
         {
