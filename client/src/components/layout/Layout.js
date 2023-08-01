@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Helmet } from "react-helmet"; // for SEO in react
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify"; // FOR NOTIFICATION
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Layout({
@@ -22,11 +22,9 @@ export default function Layout({
         <title>{title}</title>
       </Helmet>
       <Header />
-      <main style={{ minHeight: "70vh" }}>
-        <ToastContainer />
-        {children}
-      </main>
+      <main style={{ minHeight: "70vh" }}>{children}</main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
