@@ -4,11 +4,11 @@ import Layout from "../../components/layout/Layout";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { useAuth } from "../../context/auth";
+import { useAuth } from "../../context/auth";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [auth, setAuth] = useAuth();
+  const [auth, setAuth] = useAuth();
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -29,7 +29,8 @@ export default function Login() {
           autoClose: 1000,
           position: toast.POSITION.TOP_RIGHT,
         });
-        // setAuth({ ...auth, user: res.data.user, token: res.data.token });
+        setAuth({ ...auth, user: res.data.user, token: res.data.token });
+        localStorage.setItem("auth", JSON.stringify(res.data));
         setTimeout(() => {
           navigate("/"); // Redirect to the login page
         }, 1000);
