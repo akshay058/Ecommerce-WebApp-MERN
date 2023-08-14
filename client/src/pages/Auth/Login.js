@@ -3,7 +3,7 @@ import "../../styles/AuthStyles.css";
 import Layout from "../../components/layout/Layout";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,6 +11,7 @@ export default function Login() {
   const [auth, setAuth] = useAuth();
 
   const navigate = useNavigate();
+  const location = useLocation();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -32,7 +33,7 @@ export default function Login() {
         setAuth({ ...auth, user: res.data.user, token: res.data.token });
         localStorage.setItem("auth", JSON.stringify(res.data));
         setTimeout(() => {
-          navigate("/"); // Redirect to the login page
+          navigate(location.state || "/"); // Redirect to the home page
         }, 1000);
       } else {
         toast.error(res.data.message, {
