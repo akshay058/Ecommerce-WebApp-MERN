@@ -9,6 +9,7 @@ import Login from "./pages/Auth/Login";
 import Dashboard from "./pages/user/Dashboard";
 // import PrivateRoute from "./components/Routes/private";
 import PrivateRoute from "./components/Routes/Private";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
 // import { ToastContainer, toast } from "react-toastify"; // FOR NOTIFICATION
 // import "react-toastify/dist/ReactToastify.css";
 
@@ -22,6 +23,7 @@ function App() {
         </Route>
 
         <Route path="/register" element={<Register />} />
+        <Route exact path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/login" element={<Login />} />
 
         <Route path="/about" element={<About />} />

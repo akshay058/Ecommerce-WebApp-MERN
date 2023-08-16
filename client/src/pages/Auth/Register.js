@@ -11,6 +11,8 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -26,6 +28,7 @@ export default function Register() {
           password,
           phone,
           address,
+          answer,
         }
       );
       console.log(res.data);
@@ -110,6 +113,17 @@ export default function Register() {
               className="form-control"
               id="exampleInputAddress"
               placeholder="Enter Your Address"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="form-control"
+              id="exampleInputAnswer"
+              placeholder="What is Favorite Movie name"
               required
             />
           </div>
