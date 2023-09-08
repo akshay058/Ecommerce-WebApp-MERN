@@ -8,4 +8,4 @@ React , MongoDB , NodeJS
 
 # package used
 
-npm i express-formidable - to use photo in product creation..
+npm i express-formidable - to use photo in product creation.
