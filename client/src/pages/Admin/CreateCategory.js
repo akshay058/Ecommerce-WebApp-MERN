@@ -45,7 +45,7 @@ const CreateCategory = () => {
     try {
       const { data } = await axios.get("/api/v1/category/get-category");
       // console.log(data);
-      if (data.success) {
+      if (data?.success) {
         setCategories(data.category);
       }
     } catch (error) {
@@ -101,7 +101,7 @@ const CreateCategory = () => {
       const { data } = await axios.delete(
         `/api/v1/category/delete-category/${pId}`
       );
-      if (data.success) {
+      if (data?.success) {
         toast.success(`category is deleted`, {
           autoClose: 1000,
           position: toast.POSITION.TOP_RIGHT,
