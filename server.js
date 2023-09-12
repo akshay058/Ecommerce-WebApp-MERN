@@ -9,6 +9,7 @@ import authRoutes from "./routes/authRoute.js";
 import cors from "cors";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import path from "path";
 
 //config env
 dotenv.config();
@@ -22,7 +23,11 @@ connectDB();
 app.use(cors());
 app.use(express.json()); // instead of url.bodyparser this used in express
 app.use(morgan("dev")); // use see api data on console use morgan package
+app.use(express.static(path.join(__dirname, "./client/build")));
 
+app.use("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 //PORT
 const PORT = process.env.PORT || 8080;
 
