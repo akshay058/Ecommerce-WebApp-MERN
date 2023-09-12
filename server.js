@@ -10,6 +10,7 @@ import cors from "cors";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import path from "path";
+import { fileURLToPath } from "url";
 
 //config env
 dotenv.config();
@@ -18,6 +19,10 @@ const app = express();
 
 //database config
 connectDB();
+
+//es module fix
+const__filename = fileURLToPath(import.meta.url);
+const__dirname = path.dirname(__filename);
 
 //middlewares
 app.use(cors());
