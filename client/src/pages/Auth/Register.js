@@ -20,17 +20,14 @@ export default function Register() {
 
     try {
       // using axios for api fetching
-      const res = await axios.post(
-        `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        {
-          name,
-          email,
-          password,
-          phone,
-          address,
-          answer,
-        }
-      );
+      const res = await axios.post("/api/v1/auth/register", {
+        name,
+        email,
+        password,
+        phone,
+        address,
+        answer,
+      });
       console.log(res.data);
       if (res && res.data.success) {
         toast.success(res.data && res.data.message, {

@@ -15,14 +15,11 @@ const ForgotPassword = () => {
 
     try {
       // using axios for api fetching
-      const res = await axios.post(
-        `${process.env.REACT_APP_API}/api/v1/auth/forgot-password`,
-        {
-          email,
-          newPassword,
-          answer,
-        }
-      );
+      const res = await axios.post("/api/v1/auth/forgot-password", {
+        email,
+        newPassword,
+        answer,
+      });
       //   console.log(res.data);
       if (res && res.data.success) {
         toast.success(res.data && res.data.message, {
