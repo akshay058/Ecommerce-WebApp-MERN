@@ -25,7 +25,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 app.use(express.json()); // instead of url.bodyparser this used in express
 app.use(morgan("dev")); // use see api data on console use morgan package
 app.use(express.static(path.join(__dirname, "./client/build")));
