@@ -13,7 +13,7 @@ export default function Layout({
   author,
 }) {
   return (
-    <div>
+    <>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
@@ -25,7 +25,7 @@ export default function Layout({
       <main style={{ minHeight: "70vh" }}>{children}</main>
       <Footer />
       <ToastContainer />
-    </div>
+    </>
   );
 }
 

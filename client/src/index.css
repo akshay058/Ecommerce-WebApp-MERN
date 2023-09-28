@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
 
 /* font-family: 'Playfair Display', serif; */
 /* font-family: 'Poppins', sans-serif; */
@@ -100,5 +103,10 @@
   justify-content: center;
 }
 
+/* ==================== */
+.product-link {
+  text-decoration: none !important;
+  color: black !important;
+}
 /* ========================================= */
 /* =========register ========= */

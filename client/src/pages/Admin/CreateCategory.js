@@ -24,6 +24,7 @@ const CreateCategory = () => {
           autoClose: 1000,
           position: toast.POSITION.TOP_RIGHT,
         });
+        setName("");
         getAllCategory();
       } else {
         toast.error(data.message, {
