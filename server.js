@@ -20,7 +20,7 @@ const app = express();
 //database config
 connectDB();
 
-//es module fix
+//es module fix path
 const __filename = fileURLToPath(import.meta.url); // create file
 const __dirname = path.dirname(__filename); // set file name in dirname
 
