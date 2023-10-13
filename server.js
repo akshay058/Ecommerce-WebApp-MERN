@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js";
-import cors from "cors";
+import cors from "cors"; // manage cross origin access
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import path from "path"; // for merging path of frontend and backend

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/auth";
-import { Outlet } from "react-router-dom"; // check route available or not
+import { Outlet } from "react-router-dom"; // check route available or not , for nested routing uses outlet
 import axios from "axios";
 import Spinner from "../Spinner"; // spinner bootstrap
 
